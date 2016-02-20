@@ -21,7 +21,7 @@ class PlayerShip extends FlxSprite
 	/**
 	 * Basic game loop function again!
 	 */
-	override public function update():Void
+	override public function update(elapsed:Float):Void
 	{
 		// Controls!
 
@@ -48,7 +48,7 @@ class PlayerShip extends FlxSprite
 		
 		// Just like in PlayState, this is easy to forget but very important!
 		// Call this to automatically evaluate your velocity and position and stuff.
-		super.update();
+		super.update(elapsed);
 		
 		// Here we are stopping the player from moving off the screen,
 		// with a little border or margin of 4 pixels.
@@ -74,7 +74,5 @@ class PlayerShip extends FlxSprite
 			bullet.reset(x + width/2 - bullet.width/2, y);
 			bullet.velocity.y = -140;
 		}
-		
-		super.update();
 	}
 }
